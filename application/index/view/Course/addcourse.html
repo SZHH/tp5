@@ -1,0 +1,19 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>添加课程</title>
+</head>
+<body>
+<form action="/courses/addco" method="post">
+        课程名称：<input type="text" name="coname" id="coname"><br>
+        讲师：<select id="teacher_id" name="teacher_id">
+            <option value="3">---请选择---</option>
+            {volist name="all" id="all"}
+            <option value="{$all.id}">
+                    {$all.tname}</option>
+            {/volist}
+        </select>(未选默认为讲师1)<br>
+        <input type="submit" value="添加">
+</form>
+</body>
+</html>

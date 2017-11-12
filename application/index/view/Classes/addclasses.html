@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>添加班级</title>
+</head>
+<body>
+<form action="/class/addc" method="post">
+        年份：<select id="year" name="year">
+            <option value="2015">---请选择---</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+        </select>(未选默认为2015)<br>
+        专业：<input type="text" name="major" id="major"><br>
+        班级号：<input type="text" name="subclass" id="subclass"><br>
+        辅导员：<select id="teacher_id" name="teacher_id">
+            <option value="1">---请选择---</option>
+            {volist name="all" id="all"}
+            <option value="{$all.id}">
+                    {$all.tname}</option>
+            {/volist}
+        </select>(未选默认为辅导员1)<br>
+        <input type="submit" value="添加">
+</form>
+</body>
+</html>

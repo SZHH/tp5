@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>修改课程信息</title>
+</head>
+<body>
+<form method="post" action="/courses/editco/{$single.id}">
+    <fieldset>
+        <legend>课程信息</legend>
+        <p>
+            <label for="coname">课程名称：</label>
+            <input type="text" id="coname" name="coname" value="{$single.coname}" />
+        </p>
+        讲师：<select id="teacher_id" name="teacher_id">
+            {volist name="all" id="all"}
+                <option value="{$all.id}" {if $single.teacher_id==$all.id}selected="selected"{/if}>{$all.tname}</option>
+            {/volist}
+        </select><br>
+    <button type="submit">确定</button>
+    </fieldset>
+</form>
+</body>
+</html>

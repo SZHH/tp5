@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>修改学生信息</title>
+</head>
+<body>
+<form method="post" action="/students/edits/{$single.id}">
+    <fieldset>
+        <legend>学生信息</legend>
+        <p>
+            <label for="name">学生姓名：</label>
+            <input type="text" id="name" name="name" value="{$single.name}" />
+        </p>
+        <p>
+            <label for="age">年龄：</label>
+            <input type="text" id="age" name="age" value="{$single.age}" />
+        </p>
+        <p>
+            <label for="sex">性别：</label>
+            <input type="radio" name="sex" value="男" {if $single.sex=="男"}checked="checked"{/if}>男&nbsp;&nbsp;<input type="radio" name="sex" value="女" {if $single.sex=="女"}checked="checked"{/if}>女
+        </p>
+        班级：<select id="classes_id" name="classes_id">
+            {volist name="all" id="all"}
+                <option value="{$all.id}" {if $single.classes_id==$all.id}selected="selected"{/if}>{$all.year.$all.major.$all.subclass}</option>
+            {/volist}
+        </select><br>
+    <button type="submit">确定</button>
+    </fieldset>
+</form>
+</body>
+</html>

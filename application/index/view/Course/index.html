@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>课程</title>
+</head>
+<body>
+	<h2>课程列表（{$result->total()}）</h2>
+	{volist name="result" id="course"}
+	ID:{$course.id}<br>课程名称：{$course.coname}<br>讲师：{$course->teacher->tname}<br><a href="courses/deleteco/{$course.id}">删除</a>&nbsp;&nbsp;<a href="courses/editcourse/{$course.id}">编辑</a><br>
+	-------------------------<br>
+	{/volist}
+	<h2><a href="courses/addcourse">添加课程</a></h2>
+	{$result->render()}
+</body>
+</html>

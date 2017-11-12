@@ -1,0 +1,19 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>修改教师</title>
+</head>
+<body>
+<form method="post" action="/teachers/editt/{$single.id}">
+    <fieldset>
+        <legend>教师信息</legend>
+        教师姓名：<input type="text" name="tname" id="tname" value="{$single.tname}"><br>
+        教师职能：<select id="ttype" name="ttype">
+            <option value="1" {if $single.ttype=="辅导员"}selected="selected"{/if}>辅导员</option>
+            <option value="2" {if $single.ttype=="讲师"}selected="selected"{/if}>讲师</option>
+        </select><br>
+        <button type="submit">确定</button>
+    </fieldset>
+</form>
+</body>
+</html>

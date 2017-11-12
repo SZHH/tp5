@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>添加学生</title>
+</head>
+<body>
+<form action="/students/adds" method="post">
+        姓名:<input type="text" name="name" id="name"><br>
+        年龄:<input type="text" name="age" id="age"><br>
+        性别:<input type="radio" name="sex" value="男" checked="checked">男&nbsp;&nbsp;<input type="radio" name="sex" value="女">女<br>
+        班级：<select id="classes_id" name="classes_id">
+            <option value="1">---请选择---</option>
+            {volist name="all" id="all"}
+            <option value="{$all.id}">{$all.year.$all.major.$all.subclass}</option>
+            {/volist}
+        </select>(未选默认为2017软件1)<br>
+        <input type="submit" value="添加">
+</form>
+</body>
+</html>

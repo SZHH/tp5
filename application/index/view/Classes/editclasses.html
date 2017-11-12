@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>修改班级信息</title>
+</head>
+<body>
+<form method="post" action="/class/editc/{$single.id}">
+    <fieldset>
+        <legend>班级信息</legend>
+        年份：<select id="year" name="year">
+            <option value="{$single.year}">---请选择---</option>
+            <option value="2015" {if $single.year==2015}selected="selected"{/if}>2015</option>
+            <option value="2016" {if $single.year==2016}selected="selected"{/if}>2016</option>
+            <option value="2017" {if $single.year==2017}selected="selected"{/if}>2017</option>
+            <option value="2018" {if $single.year==2018}selected="selected"{/if}>2018</option>
+        </select><br>
+        <p>
+            <label for="major">专业：</label>
+            <input type="text" id="major" name="major" value="{$single.major}" />
+        </p>
+        <p>
+            <label for="subclass">班级号：</label>
+            <input type="text" id="subclass" name="subclass" value="{$single.subclass}" />
+        </p>
+        辅导员：<select id="teacher_id" name="teacher_id">
+            {volist name="all" id="all"}
+                <option value="{$all.id}" {if $single.teacher_id==$all.id}selected="selected"{/if}>{$all.tname}</option>
+            {/volist}
+        </select><br>
+    <button type="submit">确定</button>
+    </fieldset>
+</form>
+</body>
+</html>

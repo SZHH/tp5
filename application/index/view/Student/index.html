@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>学生</title>
+</head>
+<body>
+	<h2>学生列表（{$result->total()}）</h2>
+	{volist name="result" id="student"}
+	ID:{$student.id}<br>姓名：{$student.name}<br>年龄：{$student.age}<br>性别：{$student.sex}<br>班级：{$student->classes->year.$student->classes->major.$student->classes->subclass}<br><a href="students/deletes/{$student.id}">删除</a>&nbsp;&nbsp;<a href="students/editstudent/{$student.id}">编辑</a><br>
+	-------------------------<br>
+	{/volist}
+	<h2><a href="students/addstudent">添加学生</a></h2>
+	{$result->render()}
+</body>
+</html>

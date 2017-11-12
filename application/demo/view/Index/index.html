@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>主页</title>
+</head>
+<body>
+	<h2>吧</h2>
+	{volist name="result" id="ba"}
+	<a href="ba/{$ba.id}">{$ba.name}<br>
+	{/volist}
+	<h3><a href="/tie/addtie">发帖</a></h3>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>班级</title>
+</head>
+<body>
+	<h2>班级列表（{$result->total()}）</h2>
+	{volist name="result" id="classes"}
+	ID:{$classes.id}<br>年份：{$classes.year}<br>专业：{$classes.major}<br>班级号：{$classes.subclass}<br>辅导员：{$classes->teacher->tname}<br><a href="class/deletec/{$classes.id}">删除</a>&nbsp;&nbsp;<a href="class/editclasses/{$classes.id}">编辑</a><br>
+	-------------------------<br>
+	{/volist}
+	<h2><a href="class/addclasses">添加班级</a></h2>
+	{$result->render()}
+</body>
+</html>

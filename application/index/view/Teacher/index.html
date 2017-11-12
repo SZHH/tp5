@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>教师</title>
+</head>
+<body>
+	<h2>教师列表（{$result->total()}）</h2>
+	{volist name="result" id="teacher"}
+	ID:{$teacher.id}<br>教师姓名：{$teacher.tname}<br>教师职能：{$teacher.ttype}<br><a href="teachers/deletet/{$teacher.id}">删除</a>&nbsp;&nbsp;<a href="teachers/editteacher/{$teacher.id}">编辑</a><br>
+	-------------------------<br>
+	{/volist}
+	<h2><a href="teachers/addteacher">添加教师</a></h2>
+	{$result->render()}
+</body>
+</html>

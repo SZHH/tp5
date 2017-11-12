@@ -1,0 +1,18 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>发帖</title>
+</head>
+<body>
+<form action="/tie/addt" method="post">
+        标题：<input type="text" name="title"><br>
+        内容：<textarea name="content"></textarea><br>
+        请选择要发布到的吧：<select name="ba_id">
+            {volist name="result" id="all"}
+            <option value="{$all.id}">{$all.name}</option>
+            {/volist}
+        </select><br>
+        <input type="submit" value="发布">
+</form>
+</body>
+</html>
