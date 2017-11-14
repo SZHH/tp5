@@ -45,13 +45,4 @@ return [
     'students/deletes/:id' => 'index/student/deletes',
     'students/edits/:id' => 'index/student/edits',
     'students/editstudent/:id' => 'index/student/editstudent',
-
-    'ba/:id' => 'demo/ba/index',
-    'tie/:id' => 'demo/tie/index',
-    'ties/gentie/:id' => 'demo/tie/gentie',
-    'tie/addtie' => 'demo/tie/addtie',
-    'tie/addt' => 'demo/tie/addt',
-    'ties/gent' => 'demo/tie/gent',
-    'ties/huifutie/:id' => 'demo/tie/huifutie',
-    'ties/huifut' => 'demo/tie/huifut',
 ];
